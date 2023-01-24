@@ -59,6 +59,11 @@ module.exports = {
     }],
     'no-undef': 1,
     'no-unreachable': 1,
+    'no-param-reassign': 2,
+    'no-case-declarations': 2,
+    'no-unneeded-ternary': 1,
+    'no-mixed-operators': 1,
+    'spaced-comment': 1,
     'absolute-imports-only/only-absolute-imports': ['warn', { levels: 1 }],
     'import/order': [
       'error',
