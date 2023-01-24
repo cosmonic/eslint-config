@@ -53,6 +53,7 @@ function baseConfig(profile) {
       'no-unused-vars': 0,
       '@typescript-eslint/no-unused-vars': 2,
       '@typescript-eslint/no-loss-of-precision': 2,
+      '@typescript-eslint/no-cycle': 2,
       'no-console': [1, {
         allow: ['info', 'warn', 'error']
       }],
