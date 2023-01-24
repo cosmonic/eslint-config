@@ -1,6 +1,6 @@
 {
     "name": "@cosmonic/eslint-config",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "",
     "main": "index.js",
     "scripts": {},
@@ -30,7 +30,7 @@
         "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0",
         "eslint-config-react-app": "^7.0.1",
         "eslint-import-resolver-typescript": "^3.5.3",
-        "eslint-plugin-absolute-imports": "file:plugins/only-absolute-imports",
+        "eslint-plugin-absolute-imports-only": "^1.0.1",
         "eslint-plugin-cypress": "^2.12.1",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-react-hooks": "^4.6.0"

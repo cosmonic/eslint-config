@@ -13,7 +13,7 @@ module.exports = {
     '@rushstack/eslint-config/mixins/react',
     '@rushstack/eslint-config/mixins/tsdoc',
   ],
-  plugins: ['eslint-plugin-absolute-imports'],
+  plugins: ['eslint-plugin-absolute-imports-only'],
   parser: '@typescript-eslint/parser',
   ignorePatterns: ['build/*', 'node_modules/*'],
   env: {
@@ -59,7 +59,7 @@ module.exports = {
     }],
     'no-undef': 1,
     'no-unreachable': 1,
-    'absolute-imports/only-absolute-imports': ['warn', { allowSiblings: true }],
+    'absolute-imports-only/only-absolute-imports': ['warn', { levels: 1 }],
     'import/order': [
       'error',
       {
