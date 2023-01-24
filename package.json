@@ -1,0 +1,38 @@
+{
+    "name": "@cosmonic/eslint-config",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cosmonic/eslint-config.git"
+    },
+    "authors": [
+        {
+            "name": "Lachlan Heywood",
+            "website": "https://github.com/lachieh"
+        }
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/cosmonic/eslint-config/issues"
+    },
+    "homepage": "https://github.com/cosmonic/eslint-config#readme",
+    "peerDependencies": {
+        "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0",
+        "typescript": ">=4.9.0"
+    },
+    "dependencies": {
+        "@rushstack/eslint-config": "^3.1.1",
+        "@typescript-eslint/parser": "^5.49.0",
+        "@typescript-eslint/typescript-estree": "^5.49.0",
+        "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0",
+        "eslint-config-react-app": "^7.0.1",
+        "eslint-import-resolver-typescript": "^3.5.3",
+        "eslint-plugin-absolute-imports": "file:plugins/only-absolute-imports",
+        "eslint-plugin-cypress": "^2.12.1",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-react-hooks": "^4.6.0"
+    }
+}
