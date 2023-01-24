@@ -4,17 +4,8 @@ const prettierConfig = {
   endOfLine: 'lf',
   printWidth: 100,
   singleQuote: true,
-  tabWidth: 4,
+  tabWidth: 2,
   trailingComma: 'all',
-  bracketSpacing: false,
-  overrides: [
-    {
-      files: '**/*.@(yml|yaml)',
-      options: {
-        tabWidth: 2,
-      },
-    },
-  ],
 };
 
 module.exports = prettierConfig;

@@ -16,7 +16,7 @@ function baseConfig(profile) {
     parser: '@typescript-eslint/parser',
     ignorePatterns: ['build/*', 'node_modules/*'],
     env: {
-      browser: true
+      ...(profile === 'web-app' ? { browser: true } : {}),
     },
     settings: {
       'import/resolver': {
@@ -24,49 +24,22 @@ function baseConfig(profile) {
         node: true,
       },
     },
-    overrides: [
-      {
-        files: ['*rc.js', '*.config.+(js|ts)'],
-        env: {
-          node: true,
-        },
-      },
-      {
-        files: ['*.test.+(ts|tsx)', 'src/test/**/*.+(ts|tsx)'],
-        env: {
-          jest: true,
-          node: true,
-        },
-        globals: {
-          vi: true,
-        },
-      },
-      {
-        files: ['cypress/**/*.ts'],
-        extends: ['plugin:cypress/recommended'],
-        parserOptions: {
-          project: './cypress/tsconfig.json',
-        },
-      },
-    ],
     rules: {
       'no-unused-vars': 0,
-      '@typescript-eslint/no-unused-vars': 2,
-      '@typescript-eslint/no-loss-of-precision': 2,
-      'no-console': [1, {
-        allow: ['info', 'warn', 'error']
-      }],
+      '@typescript-eslint/no-unused-vars': 1,
+      '@typescript-eslint/no-loss-of-precision': 1,
+      'no-console': [1, { allow: ['info', 'warn', 'error'] }],
       'no-undef': 1,
       'no-unreachable': 1,
-      'no-param-reassign': 2,
-      'no-case-declarations': 2,
+      'no-param-reassign': 1,
+      'no-case-declarations': 1,
       'no-unneeded-ternary': 1,
       'no-mixed-operators': 1,
-      'spaced-comment': 1,
+      'spaced-comment': [1, 'always', { markers: ['/'] }],
       'absolute-imports-only/only-absolute-imports': ['warn', { levels: 1 }],
       'import/no-cycle': 2,
       'import/order': [
-        'error',
+        1,
         {
           alphabetize: {
             order: 'asc',

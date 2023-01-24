@@ -1,8 +1,11 @@
-const config = require('./profiles/web-app')
+const baseConfig = require('./profiles/web-app')
 
-config.env = {
-  ...config.env,
-  node: true
+const config = {
+  ...baseConfig,
+  env: {
+    ...baseConfig.env,
+    node: true
+  }
 }
 
 module.exports = config
