@@ -53,7 +53,6 @@ function baseConfig(profile) {
       'no-unused-vars': 0,
       '@typescript-eslint/no-unused-vars': 2,
       '@typescript-eslint/no-loss-of-precision': 2,
-      '@typescript-eslint/no-cycle': 2,
       'no-console': [1, {
         allow: ['info', 'warn', 'error']
       }],
@@ -65,6 +64,7 @@ function baseConfig(profile) {
       'no-mixed-operators': 1,
       'spaced-comment': 1,
       'absolute-imports-only/only-absolute-imports': ['warn', { levels: 1 }],
+      'import/no-cycle': 2,
       'import/order': [
         'error',
         {
