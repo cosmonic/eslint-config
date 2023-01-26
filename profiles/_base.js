@@ -14,6 +14,9 @@ function baseConfig(profile) {
     ],
     plugins: ['eslint-plugin-absolute-imports-only'],
     parser: '@typescript-eslint/parser',
+    parserOptions: {
+      project: './tsconfig.json',
+    },
     ignorePatterns: ['build/*', 'node_modules/*'],
     env: {
       ...(profile === 'web-app' ? { browser: true } : {}),
