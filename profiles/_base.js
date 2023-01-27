@@ -1,10 +1,11 @@
 // This is a workaround for https://github.com/eslint/eslint/issues/3458
 require('@rushstack/eslint-config/patch/modern-module-resolution');
 
+/**
+ * Build config based on profile
+ * @returns {import('eslint').ESLint.ConfigData}
+ */
 function baseConfig(profile) {
-  /**
-   * @type {import('eslint').ESLint.ConfigData}
-   */
   return {
     extends: [
       'plugin:import/recommended',
@@ -29,22 +30,23 @@ function baseConfig(profile) {
       },
     },
     rules: {
-      'no-unused-vars': 0,
-      '@typescript-eslint/no-unused-vars': 1,
-      '@typescript-eslint/no-loss-of-precision': 1,
-      'no-console': [1, { allow: ['info', 'warn', 'error'] }],
-      'no-undef': 1,
-      'no-unreachable': 1,
-      'no-param-reassign': 1,
-      'no-case-declarations': 1,
-      'no-unneeded-ternary': 1,
-      'no-mixed-operators': 1,
-      'spaced-comment': [1, 'always', { markers: ['/'] }],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': ['warn', { ignoreRestSiblings: true }],
+      '@typescript-eslint/no-loss-of-precision': 'warn',
+      'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
+      'no-undef': 'warn',
+      'no-unreachable': 'warn',
+      'no-param-reassign': 'warn',
+      'no-case-declarations': 'warn',
+      'no-unneeded-ternary': 'warn',
+      'no-mixed-operators': 'warn',
+      'spaced-comment': ['warn', 'always', { markers: ['/'] }],
       'absolute-imports-only/only-absolute-imports': ['warn', { levels: 1 }],
-      'eslint-comments/require-description': 1,
-      'import/no-cycle': 2,
+      'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
+      'eslint-comments/require-description': 'warn',
+      'import/no-cycle': 'error',
       'import/order': [
-        1,
+        'warn',
         {
           alphabetize: {
             order: 'asc',
