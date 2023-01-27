@@ -11,6 +11,7 @@ function baseConfig(profile) {
       'plugin:import/typescript',
       ...(profile === 'web-app' ? ['@rushstack/eslint-config/profile/web-app'] : []),
       '@rushstack/eslint-config/mixins/tsdoc',
+      'plugin:eslint-comments/recommended',
     ],
     plugins: ['eslint-plugin-absolute-imports-only'],
     parser: '@typescript-eslint/parser',
@@ -40,6 +41,7 @@ function baseConfig(profile) {
       'no-mixed-operators': 1,
       'spaced-comment': [1, 'always', { markers: ['/'] }],
       'absolute-imports-only/only-absolute-imports': ['warn', { levels: 1 }],
+      'eslint-comments/require-description': 1,
       'import/no-cycle': 2,
       'import/order': [
         1,
