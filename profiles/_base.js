@@ -52,6 +52,7 @@ function baseConfig(profile) {
             order: 'asc',
           },
           groups: [
+            'unknown',
             'type',
             'builtin',
             'external',
@@ -60,6 +61,21 @@ function baseConfig(profile) {
             'parent',
             'sibling',
             'index',
+          ],
+          warnOnUnassignedImports: true,
+          pathGroups: [
+            {
+              group: 'unknown',
+              pattern: '**/*.+(css|sass|scss|less|styl)',
+              patternOptions: { dot: true, nocomment: true },
+              position: 'before',
+            },
+            {
+              group: 'unknown',
+              pattern: '{.,..}/**/*.+(css|sass|scss|less|styl)',
+              patternOptions: { dot: true, nocomment: true },
+              position: 'before',
+            },
           ],
         },
       ],
