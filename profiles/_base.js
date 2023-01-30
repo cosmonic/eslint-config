@@ -39,7 +39,6 @@ function baseConfig(profile) {
       'no-param-reassign': 'warn',
       'no-case-declarations': 'warn',
       'no-unneeded-ternary': 'warn',
-      'no-mixed-operators': 'warn',
       'spaced-comment': ['warn', 'always', { markers: ['/'] }],
       'absolute-imports-only/only-absolute-imports': ['warn', { levels: 1 }],
       'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
