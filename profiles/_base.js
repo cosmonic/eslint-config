@@ -1,8 +1,10 @@
 // This is a workaround for https://github.com/eslint/eslint/issues/3458
+// @ts-ignore -- no types, we're doing it live!
 require('@rushstack/eslint-config/patch/modern-module-resolution');
 
 /**
  * Build config based on profile
+ * @param {string} profile
  * @returns {import('eslint').ESLint.ConfigData}
  */
 function baseConfig(profile) {
@@ -44,6 +46,7 @@ function baseConfig(profile) {
       'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
       'eslint-comments/require-description': 'warn',
       'import/no-cycle': 'error',
+      'import/no-named-as-default-member': 'off',
       'import/order': [
         'warn',
         {
