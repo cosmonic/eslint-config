@@ -35,6 +35,7 @@ function baseConfig(profile) {
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': ['warn', { ignoreRestSiblings: true }],
       '@typescript-eslint/no-loss-of-precision': 'warn',
+      '@rushstack/typedef-var': 'off',
       'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
       'no-undef': 'warn',
       'no-unreachable': 'warn',
@@ -45,6 +46,7 @@ function baseConfig(profile) {
       'absolute-imports-only/only-absolute-imports': ['warn', { levels: 1 }],
       'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
       'eslint-comments/require-description': 'warn',
+      'eslint-comments/no-unused-disable': 'error',
       'import/no-cycle': 'error',
       'import/no-named-as-default-member': 'off',
       'import/order': [

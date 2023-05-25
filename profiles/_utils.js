@@ -3,20 +3,14 @@
 const rushStackBase = require('@rushstack/eslint-config/profile/web-app');
 
 /**
- * @typedef {{
- *   selector: string
- * }} Rule
- */
-
-/**
  * The `@rushstack/eslint-config` package provides existing naming convention rules. This allows us
  * to selectively replace or add rules by matching their selector.
  *
- * @param {Rule} newRule replacement rules
+ * @param {any[]} newRules replacement rules
  * @param {boolean} replace whether to replace or append the rule
- * @returns {Rule[]} new set of rules
+ * @returns {any[]} new set of rules
  */
-function extendRushNamingConventionRules(newRule, replace = true) {
+function extendRushNamingConventionRules(newRules, replace = true) {
   const tsOverrides = rushStackBase.overrides?.find(
     (rule) => typeof rule.files !== 'string' && rule.files.some((file) => file.includes('ts')),
   ) || { rules: {} };
@@ -34,8 +28,10 @@ function extendRushNamingConventionRules(newRule, replace = true) {
     ] ?? [0, {}];
 
     return [
-      ...tsNamingConventions.filter((rule) => replace && newRule.selector !== rule.selector),
-      newRule,
+      ...tsNamingConventions.filter(
+        (rule) => replace && newRules.some((newRule) => newRule.selector !== rule.selector),
+      ),
+      ...newRules,
     ];
   }
 
